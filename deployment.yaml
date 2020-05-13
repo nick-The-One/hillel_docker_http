@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleserve-deployment
+  labels:
+    app: simpleserve
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simpleserve
+  template:
+    metadata:
+      labels:
+        app: simpleserve
+    spec:
+      containers:
+        - name: simpleserve
+          image: nicktheone/hillel_simpleserve:latest
+          ports:
+            - containerPort: 8000

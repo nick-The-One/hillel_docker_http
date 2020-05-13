@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simpleserve
+  labels:
+    app: simpleserve
+spec:
+  containers:
+    - name: simpleserve
+      image: nicktheone/hillel_simpleserve:latest
+      ports:
+        - containerPort: 8000
